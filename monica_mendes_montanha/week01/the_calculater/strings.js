@@ -76,7 +76,18 @@ If the string length is less than 3, it should leave it unchanged. For example:
   verbing('go'): 'go'
 */
 
+const verbing = function(string){
+    if (string.length >= 3 && (string.endsWith('ing'))) {
+        return `${string}ly`;
+    } else if (string.length >=3) {
+        return `${string}ing`;
+    } else (string.length < 3)
+        return string;
+};
 
+console.log(verbing("swim"));
+console.log(verbing("swimming"));
+console.log(verbing("go"));
 
 
 /*
@@ -94,4 +105,14 @@ just return the original sentence. For example:
   notBad('This dinner is bad!'): 'This dinner is bad!'
   */
  
+
+  const notBad = function (string) {
+ 
+   return string.replace(/not(.*)bad/g, "good");
+
+};
+
+  console.log(notBad('This dinner is not that bad!'));
+  console.log(notBad('This movie is not so bad!'));
+  console.log(notBad('This dinner is bad!'));
 
