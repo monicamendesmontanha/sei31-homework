@@ -48,4 +48,12 @@ Calculate what percentage that area is of the squared result (#3).
 */
 
 
-
+function allOperations (n) {
+    const resultOfHalfNumber = halfNumber(n);
+    const resultOfSquareNumber = squareNumber(resultOfHalfNumber);
+    const resultOfAreaOfCircle = areaOfCircle(resultOfSquareNumber);
+    const resultOfPercentOf = percentOf(resultOfAreaOfCircle, 2);
+    result = resultOfPercentOf;
+    return result
+};
+console.log(allOperations(5));
