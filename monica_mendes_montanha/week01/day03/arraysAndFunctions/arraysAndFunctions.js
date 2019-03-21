@@ -9,11 +9,13 @@ Define a function maxOfThree that takes three numbers as arguments and returns t
 
 console.log("---maxOfTwoNumbers---");
 const maxOfTwoNumbers = function(number1, number2) {
-  if (number1 > number2) {
-    return number1;
-  } else {
-    return number2;
-  }
+  // if (number1 > number2) {
+  //   return number1;
+  // } else {
+  //   return number2;
+  // }
+
+  return number1 > number2 ? number1 : number2;
 };
 
 console.log(maxOfTwoNumbers(3, 6));
@@ -35,17 +37,24 @@ console.log(maxOfThreeNumbers(40, 30, 20));
 console.log(maxOfThreeNumbers(0, 50, 10));
 
 //Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
-console.log("---isAVowel---");
-const Vowel = function(string) {
-  const isAVowel =
-    (string.length - 1).toUpperCase === "A" || "B" || "C" || "D" || "E"
-      ? true
-      : false; // condition ? expr1 : expr2
-  return isAVowel;
-};
 
-console.log(Vowel("australia"));
-console.log(Vowel("spain"));
+console.log("---isAVowel---");
+
+const vowelFunc = function (character) {
+  const vowelsArray = ["A", "E", "I", "O", "U", "a", "e", "i" , "o", "u"]
+
+  for (let i = 0; i < vowelsArray.length; i++) {
+    if ( character === vowelsArray[i] ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(vowelFunc("a"));
+console.log(vowelFunc("U"));
+console.log(vowelFunc("n"));
+
 
 //Define a function sumArray and a function multiplyArray that sums and multiplies (respectively) all the numbers in an array of numbers.
 //For example, sumArray([1,2,3,4]) should return 10, and multiplyArray([1,2,3,4]) should return 24.
@@ -60,14 +69,16 @@ const sumArray = function(array) {
   return message;
 };
 
+// Another solutions is using the "Reduce"!
 const multiplyArray = function(array) {
-  let total = 0;
+  let total = 1;
   for (let i = 0; i < array.length; i++) {
     total = total * array[i];
     message = `The result of multiplication is ${total}.`;
   }
   return message;
 };
+
 console.log(sumArray([1, 2, 3, 4]));
 console.log(multiplyArray([1, 2, 3, 4]));
 
