@@ -48,11 +48,11 @@ const triangleA = {
 const triangle = function(side1, side2, side3){
 
   if (side1 === side2 && side1 === side3 && side2 === side3){
-    return `is equilateral`;
+    return `the triangle is equilateral`;
   } else if (side1 === side2 || side1 === side3 || side2 === side3){
-    return `is isosceles`;
+    return `the triangle is isosceles`;
   } else {
-    return `is escaleno`;
+    return `the triangle is escaleno`;
   }
 
 };
