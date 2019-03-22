@@ -43,7 +43,7 @@ const validateCreditCard = function(number) {
 
   const allEqual = newArray.every(v => v === newArray[0]);
   if (allEqual === true) {
-    return "only one type of number";
+    return { valid: false, error: "only one type of number", number: number };;
   }
 
   //console.log(newArray);
