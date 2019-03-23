@@ -47,16 +47,17 @@ const planTrip = function(startLine, startStation, endLine, endStation){
   const line = lines[startLine];
   const startIndex = line.indexOf(startStation);
   const stopIndex = line.indexOf(endStation);
+  const firstMessage = `You must travel through the following stops on the`
 
   if(stopIndex !== -1){
 
     if(startIndex < stopIndex){
 
       const stops = line.slice(startIndex + 1, stopIndex +1);
-      console.log(`You must travel through the following stops on the ${startLine} line: ${stops}.`);
+      console.log(`${firstMessage} ${startLine} line: ${stops}.`);
     } else {
       const stops = line.slice(stopIndex, startIndex);
-      console.log(`You must travel through the following stops on the ${line[stopIndex]} line: ${stops.reverse()}.`);
+      console.log(`${firstMessage} ${line[stopIndex]} line: ${stops.reverse()}.`);
     }
 
   } else {
@@ -68,14 +69,14 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
       const stopsUntillIntersection = line.slice(intersectionIndex, startIndex + 1);
 
-      console.log(`You must travel through the following stops on the ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
+      console.log(`${firstMessage} ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
       console.log(`Change at ${line[intersectionIndex]}.`);
 
     } else {
 
       const stopsUntillIntersection = line.slice(startIndex + 1, intersectionIndex + 1);
 
-      console.log(`You must travel through the following stops on the ${startLine} line: ${stopsUntillIntersection}`);
+      console.log(`${firstMessage} ${startLine} line: ${stopsUntillIntersection}`);
       console.log(`Change at ${line[intersectionIndex]}.`);
     }
 
@@ -83,13 +84,14 @@ const planTrip = function(startLine, startStation, endLine, endStation){
     const lineAfterChanged = lines[endLine];
     const stationIntersectionIndex = lineAfterChanged.indexOf('Union Square')
     const lastStopIndex = lineAfterChanged.indexOf(endStation);
+    const secondMessage = `Your journey continues through the following stops:`;
 
     if(stationIntersectionIndex < lastStopIndex){
       const stopsUntillTheEnd = lineAfterChanged.slice(stationIntersectionIndex + 1, lastStopIndex + 1);
-      console.log(`Your journey continues through the following stops: ${stopsUntillTheEnd}`)
+      console.log(`${secondMessage} ${stopsUntillTheEnd}`)
     } else {
       const stopsUntillTheEnd = lineAfterChanged.slice(lastStopIndex, stationIntersectionIndex);
-      console.log(`Your journey continues through the following stops: ${stopsUntillTheEnd.reverse()}`);
+      console.log(`${secondMessage} ${stopsUntillTheEnd.reverse()}`);
     }
 
   }
