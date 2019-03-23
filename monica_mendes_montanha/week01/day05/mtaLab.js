@@ -39,28 +39,46 @@ Make sure the stops that are the same for different lines have different names (
 */
 const lines = {
   'N': [ 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th' ],
-  'L': [ '8th', '6th', 'UnionSquare', '3rd', '1st' ],
+  'L': [ '8th', '6th', 'Union Square', '3rd', '1st' ],
   '6': [ 'Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place' ]
 };
 
 const planTrip = function(startLine, startStation, endLine, endStation){
   const line = lines[startLine];
-  const start = line.indexOf(startStation);
-  const stop = line.indexOf(endStation);
+  const startIndex = line.indexOf(startStation);
+  const stopIndex = line.indexOf(endStation);
 
-  if(stop !== -1){
+  if(stopIndex !== -1){
 
-    const stops = line.slice(start + 1, stop +1);
-    console.log(`You must travel through the following stops on the ${startLine} line: ${stops}.`);
+    if(startIndex < stopIndex){
+
+      const stops = line.slice(startIndex + 1, stopIndex +1);
+      console.log(`You must travel through the following stops on the ${startLine} line: ${stops}.`);
+    } else {
+      const stops = line.slice(stopIndex, startIndex);
+      console.log(`You must travel through the following stops on the ${line[stopIndex]} line: ${stops.reverse()}.`);
+    }
 
   } else {
 
     const intersectionIndex = line.indexOf('Union Square');
 
-    const stopsUntillIntersection = line.slice(start + 1, intersectionIndex + 1);
 
-    console.log(`You must travel through the following stops on the ${startLine} line: ${stopsUntillIntersection}`);
-    console.log("Change at Union Square.");
+    if(intersectionIndex < startIndex){
+
+      const stopsUntillIntersection = line.slice(intersectionIndex, startIndex + 1);
+
+      console.log(`You must travel through the following stops on the ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
+      console.log(`Change at ${line[intersectionIndex]}.`);
+
+    } else {
+
+      const stopsUntillIntersection = line.slice(startIndex + 1, intersectionIndex + 1);
+
+      console.log(`You must travel through the following stops on the ${startLine} line: ${stopsUntillIntersection}`);
+      console.log(`Change at ${line[intersectionIndex]}.`);
+    }
+
 
     const lineAfterChanged = lines[endLine];
     const stationIntersectionIndex = lineAfterChanged.indexOf('Union Square')
@@ -78,5 +96,10 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
 };
 
-planTrip('N', 'Times Square', 'N', '23rd'); //34th,28th,23rd.
-planTrip('N', 'Times Square', '6', '33rd'); //34th,28th,23rd,Union Square // Change at Union Square. //23rd,28th,33rd
+planTrip('N', 'Times Square', 'N', '23rd'); //34th,28th,23rd. //same line forward
+console.log("--------------")
+planTrip('N', '8th', 'N', '34th');  //Union Square,23rd,28th,34th. //same line backward
+console.log("--------------")
+planTrip('N', 'Times Square', '6', '33rd'); //34th,28th,23rd,Union Square // Change at Union Square. //23rd,28th,33rd //change line backward at second line
+console.log("--------------")
+planTrip('L', '1st', 'N', '34th'); // 1st, 3rd, UnionSquare // Change at Union Square. //23rd,28th,34th //change line backward at both lines
