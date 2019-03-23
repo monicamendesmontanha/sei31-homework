@@ -19,7 +19,6 @@ planTrip('N', 'Times Square', '6', '33rd'); // This is only a suggested function
 // "Your journey continues through the following stops: 23rd, 28th, 33rd."
 // "7 stops in total."
 
-
 There are 3 subway lines:
 The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
 The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
@@ -29,7 +28,6 @@ All 3 subway lines intersect at Union Square, but there are no other intersectio
 (For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line,
   so you'll have to differentiate this when you name your stops in the arrays.)
 Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
-
 
 Hints:
 Work out how you would do it on paper first! Then start to explain that process in Javascript.
@@ -43,7 +41,6 @@ const lines = {
   'N': [ 'Times Square', '34th', '28th', '23rd', 'Union Square', '8th' ],
   'L': [ '8th', '6th', 'UnionSquare', '3rd', '1st' ],
   '6': [ 'Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place' ]
-
 };
 
 const planTrip = function(startLine, startStation, endLine, endStation){
@@ -53,7 +50,7 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
   if(stop !== -1){
 
-    const stops = line.slice(start + 1, stop +1);//'34th, 28th, 23rd, Union Square';
+    const stops = line.slice(start + 1, stop +1);
     console.log(`You must travel through the following stops on the ${startLine} line: ${stops}.`);
 
   } else {
@@ -65,9 +62,21 @@ const planTrip = function(startLine, startStation, endLine, endStation){
     console.log(`You must travel through the following stops on the ${startLine} line: ${stopsUntillIntersection}`);
     console.log("Change at Union Square.");
 
+    const lineAfterChanged = lines[endLine];
+    const stationIntersectionIndex = lineAfterChanged.indexOf('Union Square')
+    const lastStopIndex = lineAfterChanged.indexOf(endStation);
+
+    if(stationIntersectionIndex < lastStopIndex){
+      const stopsUntillTheEnd = lineAfterChanged.slice(stationIntersectionIndex + 1, lastStopIndex + 1);
+      console.log(`Your journey continues through the following stops: ${stopsUntillTheEnd}`)
+    } else {
+      const stopsUntillTheEnd = lineAfterChanged.slice(lastStopIndex, stationIntersectionIndex);
+      console.log(`Your journey continues through the following stops: ${stopsUntillTheEnd.reverse()}`);
+    }
+
   }
 
 };
 
-planTrip('N', 'Times Square', 'N', '23rd');
-planTrip('N', 'Times Square', '6', '33rd');
+planTrip('N', 'Times Square', 'N', '23rd'); //34th,28th,23rd.
+planTrip('N', 'Times Square', '6', '33rd'); //34th,28th,23rd,Union Square // Change at Union Square. //23rd,28th,33rd
