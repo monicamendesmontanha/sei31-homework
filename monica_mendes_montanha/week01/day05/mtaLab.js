@@ -63,6 +63,7 @@ const planTrip = function(startLine, startStation, endLine, endStation){
   } else {
 
     const intersectionIndex = line.indexOf('Union Square');
+    const changeAtIntersectionMessage = `Change at ${line[intersectionIndex]}.`;
 
 
     if(intersectionIndex < startIndex){
@@ -70,14 +71,14 @@ const planTrip = function(startLine, startStation, endLine, endStation){
       const stopsUntillIntersection = line.slice(intersectionIndex, startIndex + 1);
 
       console.log(`${firstMessage} ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
-      console.log(`Change at ${line[intersectionIndex]}.`);
+      console.log(`${changeAtIntersectionMessage}`);
 
     } else {
 
       const stopsUntillIntersection = line.slice(startIndex + 1, intersectionIndex + 1);
 
       console.log(`${firstMessage} ${startLine} line: ${stopsUntillIntersection}`);
-      console.log(`Change at ${line[intersectionIndex]}.`);
+      console.log(`${changeAtIntersectionMessage}`);
     }
 
 
