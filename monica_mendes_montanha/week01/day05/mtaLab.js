@@ -48,6 +48,7 @@ const planTrip = function(startLine, startStation, endLine, endStation){
   const startIndex = line.indexOf(startStation);
   const stopIndex = line.indexOf(endStation);
   const firstMessage = `You must travel through the following stops on the`
+  let totalStops =  0;
 
   if(stopIndex !== -1){
 
@@ -55,10 +56,13 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
       const stops = line.slice(startIndex + 1, stopIndex +1);
       console.log(`${firstMessage} ${startLine} line: ${stops}.`);
+      totalStops += stops.length;
     } else {
       const stops = line.slice(stopIndex, startIndex);
       console.log(`${firstMessage} ${line[stopIndex]} line: ${stops.reverse()}.`);
+      totalStops += stops.length;
     }
+
 
   } else {
 
@@ -72,6 +76,7 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
       console.log(`${firstMessage} ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
       console.log(`${changeAtIntersectionMessage}`);
+      totalStops += stopsUntillIntersection.length;
 
     } else {
 
@@ -79,6 +84,7 @@ const planTrip = function(startLine, startStation, endLine, endStation){
 
       console.log(`${firstMessage} ${startLine} line: ${stopsUntillIntersection}`);
       console.log(`${changeAtIntersectionMessage}`);
+      totalStops += stopsUntillIntersection.length;
     }
 
 
@@ -90,12 +96,17 @@ const planTrip = function(startLine, startStation, endLine, endStation){
     if(stationIntersectionIndex < lastStopIndex){
       const stopsUntillTheEnd = lineAfterChanged.slice(stationIntersectionIndex + 1, lastStopIndex + 1);
       console.log(`${secondMessage} ${stopsUntillTheEnd}`)
+      totalStops += stopsUntillTheEnd.length;
+
     } else {
       const stopsUntillTheEnd = lineAfterChanged.slice(lastStopIndex, stationIntersectionIndex);
       console.log(`${secondMessage} ${stopsUntillTheEnd.reverse()}`);
+      totalStops += stopsUntillTheEnd.length;
+
     }
 
   }
+  console.log(`${totalStops} stops in total.`);
 
 };
 
