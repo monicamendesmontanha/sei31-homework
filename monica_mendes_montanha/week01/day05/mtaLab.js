@@ -53,7 +53,6 @@ const planTrip = function(startLine, startStation, endLine, endStation){
   if(stopIndex !== -1){
 
     if(startIndex < stopIndex){
-
       const stops = line.slice(startIndex + 1, stopIndex +1);
       console.log(`${firstMessage} ${startLine} line: ${stops}.`);
       totalStops += stops.length;
@@ -63,30 +62,22 @@ const planTrip = function(startLine, startStation, endLine, endStation){
       totalStops += stops.length;
     }
 
-
   } else {
 
     const intersectionIndex = line.indexOf('Union Square');
     const changeAtIntersectionMessage = `Change at ${line[intersectionIndex]}.`;
 
-
     if(intersectionIndex < startIndex){
-
       const stopsUntillIntersection = line.slice(intersectionIndex, startIndex + 1);
-
       console.log(`${firstMessage} ${line[intersectionIndex]} line: ${stopsUntillIntersection.reverse()}`);
       console.log(`${changeAtIntersectionMessage}`);
       totalStops += stopsUntillIntersection.length;
-
     } else {
-
       const stopsUntillIntersection = line.slice(startIndex + 1, intersectionIndex + 1);
-
       console.log(`${firstMessage} ${startLine} line: ${stopsUntillIntersection}`);
       console.log(`${changeAtIntersectionMessage}`);
       totalStops += stopsUntillIntersection.length;
     }
-
 
     const lineAfterChanged = lines[endLine];
     const stationIntersectionIndex = lineAfterChanged.indexOf('Union Square')
@@ -97,17 +88,14 @@ const planTrip = function(startLine, startStation, endLine, endStation){
       const stopsUntillTheEnd = lineAfterChanged.slice(stationIntersectionIndex + 1, lastStopIndex + 1);
       console.log(`${secondMessage} ${stopsUntillTheEnd}`)
       totalStops += stopsUntillTheEnd.length;
-
     } else {
       const stopsUntillTheEnd = lineAfterChanged.slice(lastStopIndex, stationIntersectionIndex);
       console.log(`${secondMessage} ${stopsUntillTheEnd.reverse()}`);
       totalStops += stopsUntillTheEnd.length;
-
     }
 
   }
   console.log(`${totalStops} stops in total.`);
-
 };
 
 planTrip('N', 'Times Square', 'N', '23rd'); //34th,28th,23rd. //same line forward
