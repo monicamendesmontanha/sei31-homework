@@ -1,0 +1,32 @@
+header {
+  border: solid 2px green;
+  background-color: black;
+}
+
+header nav a{
+color: white;
+}
+
+.socialMedia {
+  border: solid 2px brown;
+}
+
+.banner {
+  border: solid 2px blue;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.request {
+  border: solid 2px red;
+}
+
+.homebox {
+  border: solid 2px yellow;
+}
+
+footer {
+  background-color: black;
+}
