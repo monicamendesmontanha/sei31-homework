@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker');
 
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
 body {
-  background-color: #820c02;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   font-family: 'Permanent Marker', cursive;
@@ -11,15 +18,22 @@ nav {
   text-align: right;
   font-family: 'Patrick Hand', cursive;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 28px;
+  background-color: #820c02;
+  padding: 16px;
 }
 
 nav a {
-  color: #820c02;
+  color: #ece5e5;
+  margin-right: 25px;
 }
 
 a:hover {
   color:  #000000;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -55,10 +69,20 @@ main {
 
 main p {
   text-align: left;
+  font-family: 'Patrick Hand', cursive;
+}
+
+main p a {
+  color: #820c02;
 }
 
 ul {
   list-style-type: none;
+  padding-left: 17px;
+}
+
+li {
+  padding: 0.5em;
 }
 
 aside {
@@ -73,6 +97,11 @@ aside a {
     color: #820c02;
 }
 
+aside h3 {
+  color: #000000;
+  font-family: 'Permanent Marker', cursive;
+}
+
 .books {
   /* border: solid 2px orange; */
   display: flex;
@@ -82,17 +111,25 @@ aside a {
   text-align: left;
 }
 
-
 .books img {
-  width: 30%;
-  height: 30%;
-  padding: 1em;
+  width: 200px;
+  height: 250px;
+  border-radius: 2em;
+  border: 2px solid #820c02;
+  box-shadow: 0 0 10px #820c02;
+  margin-bottom: 15px;
 }
 
-
 .photo_bio {
-  width: 55%;
-  border-radius: 3em;
+  width: 350px;
+  border-radius: 2em;
+  border: 2px solid #820c02;
+  box-shadow: 0 0 10px #820c02;
+}
+
+.photo_ruby {
+  width: 350px;
+  margin-bottom: 50px;
 }
 
 h4 {
@@ -111,4 +148,54 @@ h4 {
   width: 26%;
   height: 26%;
   border-radius: 5em;
+}
+
+.data_post {
+  font-size: 14px;
+  color: rgb(156, 109, 109);
+}
+
+.matz-quotes-quote {
+  display: inline-block;
+  font-family: sans-serif;
+  margin: 1em;
+  max-width: 20em;
+}
+.matz-quotes-quote blockquote {
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.matz-quotes-quote blockquote:before {
+  color: #820c02;
+  content: "\201C";
+  font-size: 4em;
+  left: 0;
+  line-height: 0.75em;
+  position: absolute;
+  top: 0;
+  transform: scale(2, 8);
+  transform-origin: top;
+}
+.matz-quotes-quote blockquote:after {
+  color: #820c02;
+  content: "\201D";
+  font-size: 4em;
+  line-height: 0.75em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(2, 8);
+  transform-origin: top;
+}
+.matz-quotes-quote blockquote > * {
+  padding: 0 2em;
+}
+.matz-quotes-quote blockquote cite {
+  color: #820c02;
+  display: block;
+  font-style: normal;
+  text-align: right;
+  text-transform: uppercase;
 }
