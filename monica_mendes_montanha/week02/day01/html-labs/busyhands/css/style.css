@@ -50,9 +50,13 @@ header nav a:hover {
 }
 
 .request {
-  border: solid 2px red;
+  /* border: solid 2px red; */
   width: 80%;
   margin: 0 auto;
+  border-style: inset;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .homebox {
