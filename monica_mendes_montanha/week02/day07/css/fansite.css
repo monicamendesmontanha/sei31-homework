@@ -98,8 +98,21 @@ h1 {
 h2,
 h3,
 h3 a,
-h4 {
+h4,
+.bio {
   color: #820c02;
+}
+
+i {
+  color: #000;
+}
+
+.icon_book {
+  color: #c96969;
+}
+
+strong {
+  color: #c96969;
 }
 
 .content {
@@ -133,7 +146,6 @@ li {
 }
 
 aside {
-  /* border: solid 2px greenyellow; */
   display: inline-block;
   width: 40%;
   text-align: justify;
@@ -245,4 +257,23 @@ h4 {
   font-style: normal;
   text-align: right;
   text-transform: uppercase;
+}
+
+aside form {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid #cdd2d5;
+  border-radius: 0.5em;
+  background-color: #e4e9ec;
+
+}
+
+#email {
+  border-radius: 0.5em;
+}
+
+#button {
+  color: #fff;
+ background-color: #c96969;
+ border-radius: 0.5em;
 }
