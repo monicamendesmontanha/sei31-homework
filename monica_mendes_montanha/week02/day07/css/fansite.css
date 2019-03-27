@@ -277,3 +277,6 @@ aside form {
  background-color: #c96969;
  border-radius: 0.5em;
 }
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.5); }
