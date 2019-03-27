@@ -27,13 +27,30 @@ nav {
   padding: 16px;
 }
 
+:root {
+  --mainColor: #c96969;
+}
+
 nav a {
   color: #ece5e5;
   margin-right: 25px;
+  background:
+  linear-gradient(
+      to bottom,
+      #ece5e5,
+      #c96969
+    );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  transition: background-size .2s;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 nav a:hover {
-  color: #c96969;
+  color: #820c02;
+  background-size: 4px 50px;
 }
 
 a:hover {
