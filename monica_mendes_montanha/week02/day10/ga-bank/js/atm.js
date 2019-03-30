@@ -68,19 +68,37 @@ $(document).ready(function() {
     checkStatusBalance("#savings-balance");
   });
 
+
+
   $("#savings-withdraw").click(function() {
-    let currentBalance = parseInt(
+    let currentSavingsBalance = parseInt(
       $("#savings-balance")
         .text()
         .replace("$", "")
     );
-    const value = parseInt($("#savings-amount").val());
 
-    if (value <= currentBalance) {
-      currentBalance = currentBalance - value;
+    let currentCheckingBalance = parseInt(
+      $("#checking-balance")
+        .text()
+        .replace("$", "")
+    );
+
+    const withdrawValue = parseInt($("#savings-amount").val());
+
+    if (withdrawValue <= currentSavingsBalance) {
+      currentSavingsBalance = currentSavingsBalance - withdrawValue;
+    } else {
+      if (withdrawValue <= currentSavingsBalance + currentCheckingBalance) {
+        let remaining = withdrawValue;
+        remaining = currentSavingsBalance - withdrawValue;
+        currentSavingsBalance = 0;
+        currentCheckingBalance = currentSavingsBalance + currentCheckingBalance - (remaining*-1);
+      }
     }
 
-    $("#savings-balance").text(`$${currentBalance}`);
+    $("#checking-balance").text(`$${currentCheckingBalance}`);
+    $("#savings-balance").text(`$${currentSavingsBalance}`);
+    checkStatusBalance("#checking-balance");
     checkStatusBalance("#savings-balance");
   });
 });
