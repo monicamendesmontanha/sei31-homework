@@ -2,23 +2,33 @@ $(document).ready(function(){
 
 console.log('loading...')
 
+const deposit = function(currentValue, value) {
+  return parseInt(currentValue) + parseInt(value);
+};
+
+const withdraw = function(currentValue, value) {
+
+  if(value > currentValue) {
+    return currentValue;
+  }
+  return currentValue - value;
+};
+
 $("#checking-deposit").click(function(){
   let currentValue = $("#checking-balance").text().replace("$", "");
-
   const value = $("#checking-amount").val();
-  currentValue = parseInt(currentValue) + parseInt(value);
-  $("#checking-balance").text(`$ ${currentValue}`);
+
+  currentValue = deposit(currentValue, value);
+  $("#checking-balance").text(`$${currentValue}`);
 });
 
 
 $("#checking-withdraw").click(function() {
   let currentValue = $("#checking-balance").text().replace("$", "");
-
   const value = $("#checking-amount").val();
-  currentValue = parseInt(currentValue) - parseInt(value);
-  $("#checking-balance").text(`$ ${currentValue}`);
-  console.log(currentValue);
 
+  currentValue = withdraw(parseInt(currentValue), parseInt(value));
+  $("#checking-balance").text(`$${currentValue}`);
 });
 
 
