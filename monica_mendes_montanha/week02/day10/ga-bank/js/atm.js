@@ -1,22 +1,24 @@
 $(document).ready(function() {
   //console.log('loading...')
 
-  const checkStatusBalance = function(balance) {
-    const currentBalance = $(balance)
-      .text()
-      .replace("$", "");
+  const getBalance = function(balanceSelector){
+    return $(balanceSelector)
+    .text()
+    .replace("$", "");
+  };
+
+  const checkStatusBalance = function(balanceSelector) {
+    const currentBalance = getBalance(balanceSelector)
 
     if (parseInt(currentBalance) === 0) {
-      $(balance).css("background-color", "red");
+      $(balanceSelector).css("background-color", "red");
     } else {
-      $(balance).css("background-color", "grey");
+      $(balanceSelector).css("background-color", "grey");
     }
   };
 
   $("#checking-deposit").click(function() {
-    let currentBalance = $("#checking-balance")
-      .text()
-      .replace("$", "");
+    let currentBalance = getBalance("#checking-balance");
     const value = $("#checking-amount").val();
 
     currentBalance = parseInt(currentBalance) + parseInt(value);
@@ -26,9 +28,7 @@ $(document).ready(function() {
   });
 
   $("#savings-deposit").click(function() {
-    let currentBalance = $("#savings-balance")
-      .text()
-      .replace("$", "");
+    let currentBalance = getBalance("#savings-balance");
     const value = $("#savings-amount").val();
 
     currentBalance = parseInt(currentBalance) + parseInt(value);
@@ -38,16 +38,8 @@ $(document).ready(function() {
   });
 
   $("#checking-withdraw").click(function() {
-    let currentCheckingBalance = parseInt(
-      $("#checking-balance")
-        .text()
-        .replace("$", "")
-    );
-    let currentSavingsBalance = parseInt(
-      $("#savings-balance")
-        .text()
-        .replace("$", "")
-    );
+    let currentCheckingBalance = parseInt(getBalance("#checking-balance"));
+    let currentSavingsBalance = parseInt(getBalance("#savings-balance"));
 
     const withdrawValue = parseInt($("#checking-amount").val());
 
@@ -58,7 +50,8 @@ $(document).ready(function() {
         let remaining = withdrawValue;
         remaining = currentCheckingBalance - withdrawValue;
         currentCheckingBalance = 0;
-        currentSavingsBalance = currentCheckingBalance + currentSavingsBalance - (remaining*-1);
+        currentSavingsBalance =
+          currentCheckingBalance + currentSavingsBalance - remaining * -1;
       }
     }
 
@@ -68,20 +61,9 @@ $(document).ready(function() {
     checkStatusBalance("#savings-balance");
   });
 
-
-
   $("#savings-withdraw").click(function() {
-    let currentSavingsBalance = parseInt(
-      $("#savings-balance")
-        .text()
-        .replace("$", "")
-    );
-
-    let currentCheckingBalance = parseInt(
-      $("#checking-balance")
-        .text()
-        .replace("$", "")
-    );
+    let currentCheckingBalance = parseInt(getBalance("#checking-balance"));
+    let currentSavingsBalance = parseInt(getBalance("#savings-balance"));
 
     const withdrawValue = parseInt($("#savings-amount").val());
 
@@ -92,7 +74,8 @@ $(document).ready(function() {
         let remaining = withdrawValue;
         remaining = currentSavingsBalance - withdrawValue;
         currentSavingsBalance = 0;
-        currentCheckingBalance = currentSavingsBalance + currentCheckingBalance - (remaining*-1);
+        currentCheckingBalance =
+          currentSavingsBalance + currentCheckingBalance - remaining * -1;
       }
     }
 
