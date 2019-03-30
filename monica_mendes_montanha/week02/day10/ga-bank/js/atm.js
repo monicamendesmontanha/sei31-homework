@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
-console.log('loading...')
+//console.log('loading...')
 
-const checkStatusBalance = function() {
-  const currentBalance = $("#checking-balance").text().replace("$", "");
+const checkStatusBalance = function(balance) {
+  const currentBalance = $(balance).text().replace("$", "");
 
+  console.log(parseInt(currentBalance))
   if(parseInt(currentBalance) === 0) {
-    $("#checking-balance").css("background-color", "red");
+    $(balance).css("background-color", "red");
   } else {
-    $("#checking-balance").css("background-color", "grey");
+    $(balance).css("background-color", "grey");
   }
 };
 
@@ -30,9 +31,17 @@ $("#checking-deposit").click(function(){
 
   currentBalance = deposit(currentBalance, value);
   $("#checking-balance").text(`$${currentBalance}`);
-  checkStatusBalance();
+  checkStatusBalance("#checking-balance");
 });
 
+$("#savings-deposit").click(function(){
+  let currentBalance = $("#savings-balance").text().replace("$", "");
+  const value = $("#savings-amount").val();
+
+  currentBalance = deposit(currentBalance, value);
+  $("#savings-balance").text(`$${currentBalance}`);
+  checkStatusBalance("#savings-balance");
+});
 
 $("#checking-withdraw").click(function() {
   let currentBalance = $("#checking-balance").text().replace("$", "");
@@ -40,8 +49,21 @@ $("#checking-withdraw").click(function() {
 
   currentBalance = withdraw(parseInt(currentBalance), parseInt(value));
   $("#checking-balance").text(`$${currentBalance}`);
-  checkStatusBalance();
+  checkStatusBalance("#checking-balance");
 });
+
+
+$("#savings-withdraw").click(function() {
+  let currentBalance = $("#savings-balance").text().replace("$", "");
+  const value = $("#savings-amount").val();
+
+  currentBalance = withdraw(parseInt(currentBalance), parseInt(value));
+  $("#savings-balance").text(`$${currentBalance}`);
+  checkStatusBalance("#savings-balance");
+});
+
+
+
 
 
 });
