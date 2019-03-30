@@ -3,43 +3,43 @@ $(document).ready(function(){
 console.log('loading...')
 
 const checkStatusBalance = function() {
-  const currentValue = $("#checking-balance").text().replace("$", "");
+  const currentBalance = $("#checking-balance").text().replace("$", "");
 
-  if(parseInt(currentValue) === 0) {
+  if(parseInt(currentBalance) === 0) {
     $("#checking-balance").css("background-color", "red");
   } else {
     $("#checking-balance").css("background-color", "grey");
   }
 };
 
-const deposit = function(currentValue, value) {
-  return parseInt(currentValue) + parseInt(value);
+const deposit = function(currentBalance, value) {
+  return parseInt(currentBalance) + parseInt(value);
 };
 
-const withdraw = function(currentValue, value) {
-  if(value > currentValue) {
-    return currentValue;
+const withdraw = function(currentBalance, value) {
+  if(value > currentBalance) {
+    return currentBalance;
   } else {
-    return currentValue - value;
+    return currentBalance - value;
   }
 };
 
 $("#checking-deposit").click(function(){
-  let currentValue = $("#checking-balance").text().replace("$", "");
+  let currentBalance = $("#checking-balance").text().replace("$", "");
   const value = $("#checking-amount").val();
 
-  currentValue = deposit(currentValue, value);
-  $("#checking-balance").text(`$${currentValue}`);
+  currentBalance = deposit(currentBalance, value);
+  $("#checking-balance").text(`$${currentBalance}`);
   checkStatusBalance();
 });
 
 
 $("#checking-withdraw").click(function() {
-  let currentValue = $("#checking-balance").text().replace("$", "");
+  let currentBalance = $("#checking-balance").text().replace("$", "");
   const value = $("#checking-amount").val();
 
-  currentValue = withdraw(parseInt(currentValue), parseInt(value));
-  $("#checking-balance").text(`$${currentValue}`);
+  currentBalance = withdraw(parseInt(currentBalance), parseInt(value));
+  $("#checking-balance").text(`$${currentBalance}`);
   checkStatusBalance();
 });
 
