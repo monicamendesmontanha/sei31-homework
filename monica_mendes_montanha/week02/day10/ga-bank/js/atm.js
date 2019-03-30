@@ -7,11 +7,11 @@ const deposit = function(currentValue, value) {
 };
 
 const withdraw = function(currentValue, value) {
-
   if(value > currentValue) {
     return currentValue;
+  } else {
+    return currentValue - value;
   }
-  return currentValue - value;
 };
 
 $("#checking-deposit").click(function(){
