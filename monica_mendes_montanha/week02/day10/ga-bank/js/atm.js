@@ -12,15 +12,12 @@ const checkStatusBalance = function(balance) {
   }
 };
 
-const deposit = function(currentBalance, value) {
-  return parseInt(currentBalance) + parseInt(value);
-};
-
 $("#checking-deposit").click(function(){
   let currentBalance = $("#checking-balance").text().replace("$", "");
   const value = $("#checking-amount").val();
 
-  currentBalance = deposit(currentBalance, value);
+  currentBalance = parseInt(currentBalance) + parseInt(value);
+
   $("#checking-balance").text(`$${currentBalance}`);
   checkStatusBalance("#checking-balance");
 });
@@ -29,7 +26,8 @@ $("#savings-deposit").click(function(){
   let currentBalance = $("#savings-balance").text().replace("$", "");
   const value = $("#savings-amount").val();
 
-  currentBalance = deposit(currentBalance, value);
+  currentBalance = parseInt(currentBalance) + parseInt(value);
+
   $("#savings-balance").text(`$${currentBalance}`);
   checkStatusBalance("#savings-balance");
 });
