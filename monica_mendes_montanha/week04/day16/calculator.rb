@@ -5,15 +5,15 @@ require 'rainbow'
 
 def show_menu
   puts "-=" * 15
-  puts "CALCULATOR" #TODO: you could .center here to make it look nice
+  puts Rainbow("CALCULATOR").blue.underline #TODO: you could .center here to make it look nice
   puts "--" * 15 # El cheapo divider horinzotal line
-  puts "[a] - Addition"
-  puts "[s] - Subtraction"
-  puts "[m] - Multiplication"
-  puts "[d] - Division"
-  puts "[e] - Exponentiation"
-  puts "[sr] - Square_roots"
-  puts "[q] - Quit"
+  puts Rainbow("[a] - Addition").bg(:blue)
+  puts Rainbow("[s] - Subtraction").bg(:blue)
+  puts Rainbow("[m] - Multiplication").bg(:blue)
+  puts Rainbow("[d] - Division").bg(:blue)
+  puts Rainbow("[e] - Exponentiation").bg(:blue)
+  puts Rainbow("[sr] - Square_roots").bg(:blue)
+  puts Rainbow("[q] - Quit").bg(:red)
 end
 
 show_menu
