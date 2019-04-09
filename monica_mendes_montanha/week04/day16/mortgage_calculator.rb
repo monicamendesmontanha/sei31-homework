@@ -2,7 +2,6 @@
 # * Calculate the monthly required payment given the other variables as input (look up the necessary variables)
 
 # Here’s how we calculate your monthly mortgage payments on a fixed-rate loan:
-
 # M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1]
 
 # The variables are:
@@ -16,10 +15,10 @@ require 'pry'
 puts "Monthly mortgage payment"
 puts "--" * 15
 
-print "Enter the initial amount you borrowed: "
+print "Enter the initial amount you borrowed: $ "
 initial_amount = gets.to_f
 
-puts "Enter the monthly interest rate: "
+print "Enter the monthly interest rate: "
 i = gets.to_f
 
 print "Enter the number of payments over the life of the loan: (XX-year) "
