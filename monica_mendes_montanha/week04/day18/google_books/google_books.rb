@@ -18,3 +18,19 @@ require 'pry'
 # => "http://books.google.com/books/content?id=Xo5xSQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" (img)
 
 # <img src=" <%= @book_cover %> ">
+
+# --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+# Books I
+# Specification
+# Build a search form that lets the user enter a book title. The Sinatra app will use HTTParty to fetch the data for the chosen book from Google Books and display it on the page. Display the cover, as a bare minimum.
+
+# Sample URL
+# https://www.googleapis.com/books/v1/volumes?q=title:Ulysses
+
+# Additional Resources
+# Dynamic URLs in Sinatra
+# Google Books Search API
+# HTTParty Tutorial
+# --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
