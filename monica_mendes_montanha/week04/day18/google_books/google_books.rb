@@ -2,6 +2,7 @@ require 'httparty'
 require 'pry'
 
 # gem install httparty
+# https://github.com/jnunemaker/httparty#httparty
 # in pry
 # require 'httparty'
 # => true
