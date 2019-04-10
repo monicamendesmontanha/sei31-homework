@@ -13,6 +13,9 @@ get '/result' do
   url = "https://www.googleapis.com/books/v1/volumes?q=title:#{@title}"
   @info = HTTParty.get url
 
+  @items = @info["items"]
+
+  @title = @info["items"][0]["volumeInfo"]["title"]
   @book_cover = @info["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
 
   erb :result
