@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Jua');
+
+body {
+  border: 2px solid red;
+  background-color: #ccc;
+  font-family: 'Fredericka the Great', cursive;
+  /* font-family: 'Jua', sans-serif; */
+  /* background-image: url("/public/img/currency.jpg");
+  background-size: cover; */
+}
+
+.container {
+  border: 2px solid blue;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Jua', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+}
+
+nav {
+  border: 2px solid yellow;
+  text-align: right;
+  padding: 30px;
+  font-family: 'Jua', sans-serif;
+}
+
+nav a {
+  color: white;
+}
+
+form {
+  border: 2px solid green;
+  text-align: center;
+  padding: 50px;
+}
+
+.controls {
+  text-align: right;
+}
+
+.img_currency {
+  text-align: center;
+  border: 2px solid white;
+}
+
+img {
+  border: thick double black;
+  min-width: 500px;
+  min-height: 300px;
+  max-width: 600px;
+  max-height: 400px;
+}
