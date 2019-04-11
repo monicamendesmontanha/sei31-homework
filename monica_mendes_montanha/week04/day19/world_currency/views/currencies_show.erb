@@ -1,4 +1,4 @@
-<h2><%= @currency["countrt"] %></h2>
+<h2><%= @currency["country"] %></h2>
 <h3> Currency: <em><%= @currency["name"] %></em> </h3>
 <div class="img_currency">
   <% unless @currency["image"].nil? %>
@@ -7,5 +7,5 @@
 </div>
 <div class="controls">
   <a href="/currencies/<%= @currency["id"] %>/edit">Edit</a>
-  <a href="/currencies/<%= @currency["id"] %>/delete">Delete</a>
+  <a class="delete" href="/currencies/<%= @currency["id"] %>/delete">Delete</a>
 </div>

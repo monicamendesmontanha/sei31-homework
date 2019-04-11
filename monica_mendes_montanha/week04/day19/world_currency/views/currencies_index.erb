@@ -1,9 +1,11 @@
-<h2>List of currencies of the world by countries</h2>
+<h2 class="title_list">List of currencies of the world by countries</h2>
 
-<% @currencies.each do |currency| %>
-  <p>
+<div class="list">
+  <% @currencies.each do |currency| %>
+  <div class="list_names">
     <a href="/currencies/<%= currency["id"] %>">
       <%= currency["country"] %>
     </a>
-  </p>
-<% end %>
+    </div>
+  <% end %>
+</div>
