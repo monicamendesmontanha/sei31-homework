@@ -68,6 +68,13 @@ post '/animals/:id' do
   redirect to ("/animals/#{ animal.id }")
 end
 
+# DELETE ANIMAL
+get '/animals/:id/delete' do
+  animal = Animal.find params[:id]
+  animal.destroy
+  redirect to("/animals")
+end
+
 
 # INDEX - Show all groups
 get '/groups' do
