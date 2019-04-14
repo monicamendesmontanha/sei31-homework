@@ -22,18 +22,21 @@ post '/currencies' do
   redirect to('/currencies')
 end
 
+# EDIT
 get '/currencies/:id/edit' do
   currencies = query_db "SELECT * FROM currencies WHERE id=#{params[:id]}"
   @currencies = currencies.first
   erb :currencies_edit
 end
 
+# SHOWS
 get '/currencies/:id' do
   currencies = query_db "SELECT * FROM currencies WHERE id=#{params[:id]}"
   @currency = currencies.first
   erb :currencies_show
 end
 
+# DESTROY
 get '/currencies/:id/delete' do
   query_db "DELETE FROM currencies WHERE id=#{ params[:id] }"
   redirect to("/currencies")
