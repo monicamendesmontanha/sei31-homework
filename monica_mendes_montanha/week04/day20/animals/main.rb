@@ -38,4 +38,24 @@ get '/groups' do
   erb :groups_index
 end
 
+# NEW GROUP
+get '/groups/new' do
+  erb :groups_new
+end
+
+# CREATE GROUP
+post '/groups' do
+  group = Group.new
+  group.name = params[:name]
+  group.save
+  redirect to ("/groups/#{ group.id }")
+end
+
+# SHOW
+get '/groups/:id' do
+  @group = Group.find params[:id]
+  erb :groups_show
+end
+
+
 # binding.pry
