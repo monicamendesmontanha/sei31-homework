@@ -51,10 +51,24 @@ post '/groups' do
   redirect to ("/groups/#{ group.id }")
 end
 
-# SHOW
+# SHOW GROUP
 get '/groups/:id' do
   @group = Group.find params[:id]
   erb :groups_show
+end
+
+# EDIT GROUP
+get '/groups/:id/edit' do
+  @group = Group.find params[:id]
+  erb :groups_edit
+end
+
+# UPDATE
+post '/groups/:id' do
+  group = Group.find params[:id]
+  group.name = params[:name]
+  group.save
+  redirect to("/groups/#{ group.id }")
 end
 
 
