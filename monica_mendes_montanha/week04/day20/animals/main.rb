@@ -53,6 +53,12 @@ get '/animals/:id' do
   erb :animals_show
 end
 
+# EDIT ANIMAL
+get '/animals/:id/edit' do
+  @animal = Animal.find params[:id]
+  erb :animals_edit
+end
+
 
 # INDEX - Show all groups
 get '/groups' do
