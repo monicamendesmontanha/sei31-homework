@@ -32,6 +32,28 @@ get '/animals' do
   erb :animals_index
 end
 
+# CREATE ANIMAL
+post '/animals' do
+  group = Group.find(params[:group_id])
+
+  animal = Animal.new
+  animal.name = params[:name]
+  animal.image = params[:image]
+
+  group.animals << animal
+  group.save
+
+  redirect to ("/groups/#{ group.id }")
+end
+
+
+# SHOW ANIMAL
+get '/animals/:id' do
+  @animal = Animal.find params[:id]
+  erb :animals_show
+end
+
+
 # INDEX - Show all groups
 get '/groups' do
   @groups = Group.all
