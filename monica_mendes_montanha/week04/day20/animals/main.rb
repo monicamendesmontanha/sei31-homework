@@ -59,6 +59,15 @@ get '/animals/:id/edit' do
   erb :animals_edit
 end
 
+# UPDATE ANIMAL
+post '/animals/:id' do
+  animal = Animal.find params[:id]
+  animal.name = params[:name]
+  animal.image = params[:image]
+  animal.save
+  redirect to ("/animals/#{ animal.id }")
+end
+
 
 # INDEX - Show all groups
 get '/groups' do
