@@ -32,4 +32,10 @@ get '/animals' do
   erb :animals_index
 end
 
-binding.pry
+# INDEX - Show all groups
+get '/groups' do
+  @groups = Group.all
+  erb :groups_index
+end
+
+# binding.pry
