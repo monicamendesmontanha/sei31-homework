@@ -14,7 +14,7 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
 # Models
-class Animals < ActiveRecord::Base
+class Animal < ActiveRecord::Base
   belongs_to :group, :optional => true # Since Rails 5
 end
 
@@ -25,3 +25,11 @@ end
 get '/' do
   erb :home
 end
+
+# INDEX - Show all animals
+get '/animals' do
+  @animals = Animal.all
+  erb :animals_index
+end
+
+binding.pry
