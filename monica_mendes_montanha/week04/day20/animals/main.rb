@@ -63,7 +63,7 @@ get '/groups/:id/edit' do
   erb :groups_edit
 end
 
-# UPDATE
+# UPDATE GROUP
 post '/groups/:id' do
   group = Group.find params[:id]
   group.name = params[:name]
@@ -71,5 +71,11 @@ post '/groups/:id' do
   redirect to("/groups/#{ group.id }")
 end
 
+# DELETE GROUP
+get '/groups/:id/delete' do
+  group = Group.find params[:id]
+  group.destroy
+  redirect to("/groups")
+end
 
 # binding.pry
