@@ -16,28 +16,10 @@ class RockPaperScissorsController < ApplicationController
       return "It's a draw"
     end
 
-    if player_1 == 'rock' && player_2 == 'scissors'
+    if player_1 == 'rock' && player_2 == 'scissors' || player_1 == 'scissors' && player_2 == 'paper' || player_1 == 'paper' && player_2 == 'rock'
       return "#{player_1} player wins!"
-    end
-
-    if player_1 == 'rock' && player_2 == 'paper'
+    else
       return "#{player_2} player wins!"
-    end
-
-    if player_1 == 'paper' && player_2 == 'rock'
-      return "#{player_1} player wins!"
-    end
-
-    if player_1 == 'paper' && player_2 == 'scissors'
-      return "#{player_2} player wins!"
-    end
-
-    if player_1 == 'scissors' && player_2 == 'rock'
-      return "#{player_2} player wins!"
-    end
-
-    if player_1 == 'scissors' && player_2 == 'paper'
-      return "#{player_1} player wins!"
     end
   end
 
