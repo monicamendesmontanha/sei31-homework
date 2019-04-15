@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/secret_number' => 'secret_number#index'
   post '/secret_number' => 'secret_number#guess'
 
-  get '/rock_paper_scissors' => 'rock_paper_scissors#index'
+  get '/rock_paper_scissors/' => 'rock_paper_scissors#index'
+  get '/rock_paper_scissors/:throw' => 'rock_paper_scissors#throw'
 end
