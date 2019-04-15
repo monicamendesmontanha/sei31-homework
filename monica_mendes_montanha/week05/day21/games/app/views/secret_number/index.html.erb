@@ -1,2 +1,17 @@
-<h1>SecretNumber#index</h1>
-<p>Find me in app/views/secret_number/index.html.erb</p>
+<%= form_tag("/secret_number", method: "post") do %>
+  <%= label_tag(:guessed_number, "Enter a number:") %>
+  <%= number_field_tag(:guessed_number) %>
+  <%= submit_tag("Make a guess") %>
+<% end %>
+
+<p>
+  <label>Guessed Number:</label>
+  <span><%= @guessed_number %></span>
+</p>
+<p>
+  <label>Secret Number:</label>
+  <span><%= @secret_number %></span>
+</p>
+<p>
+  <%= @message %>
+</p>
