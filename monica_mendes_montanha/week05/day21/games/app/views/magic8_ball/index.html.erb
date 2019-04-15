@@ -1,0 +1,10 @@
+<h1>Magic8Ball#index</h1>
+<p>Find me in app/views/magic8_ball/index.html.erb</p>
+
+<%= form_tag("/magic8_ball/answer", method: "post") do %>
+  <%= label_tag(:question, "What you want to know?") %>
+  <%= text_field_tag(:question) %>
+  <%= submit_tag("Ask question") %>
+<% end %>
+
+<%= @question_and_answer %>

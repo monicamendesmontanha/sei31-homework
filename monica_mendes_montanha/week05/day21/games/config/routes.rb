@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root :to => 'welcome#index'
+  get '/magic8_ball' => 'magic8_ball#index'
+  post '/magic8_ball/answer' => 'magic8_ball#answer'
+  get '/secret_number' => 'secret_number#index'
+  get '/rock_paper_scissors' => 'rock_paper_scissors#index'
 end
