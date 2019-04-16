@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
   background-color: #ccc;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -27,18 +30,59 @@ body {
 }
 
 .square {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   padding: 5px;
   min-width: 10px;
   margin: 10px;
+  border: 1px solid grey;
 }
 
 a {
   text-decoration: none;
-  font-size: 20px;
-  margin: 10px;
 }
 
 nav {
   text-align: right;
+  font-size: 20px;
+  padding: 15px;
+  background-color: grey;
+}
+
+.container .navbar a {
+  margin-left: 20px;
+  color: white;
+}
+
+h1 {
+  padding: 10px;
+}
+
+.controls {
+ /* border: 1px solid yellow; */
+ text-align: right;
+}
+
+.controls a {
+ color: white;
+}
+
+.edit {
+  border: 1px solid black;
+  width: 150px;
+  text-align: center;
+  background-color: grey
+}
+
+.delete {
+  border: 1px solid black;
+  width: 150px;
+  text-align: center;
+  background-color: rgb(192, 101, 101);
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
