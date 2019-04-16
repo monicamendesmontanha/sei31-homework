@@ -340,3 +340,33 @@ Processing by MountainsController#index as HTML
 Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/mountains" for ::1 at 2019-04-16 16:45:55 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for #<#<Class:0x00007fb836eb5460>:0x00007fb835afd580>
+Did you mean?  font_path):
+    10:   <body>
+    11:     <div class="container">
+    12:       <nav>
+    13:         <%= link_to 'Home', root_path %>
+    14:         <%= link_to 'All mountains', mountains_path %>
+    15:         <%= link_to 'new mountain', new_mountain_path %>
+    16:       </nav>
+  
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___2486256514025819867_70214575731060'
+Started GET "/mountains" for ::1 at 2019-04-16 16:46:30 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.7ms)
+
+
