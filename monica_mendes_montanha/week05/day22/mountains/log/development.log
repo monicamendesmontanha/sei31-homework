@@ -1051,3 +1051,111 @@ Processing by MountainsController#index as HTML
 Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/mountains" for ::1 at 2019-04-16 17:14:49 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.5ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:15:22 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:15:32 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:15:42 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:16:27 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:16:54 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:25 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:33 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:34 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:34 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:35 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:17:44 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
