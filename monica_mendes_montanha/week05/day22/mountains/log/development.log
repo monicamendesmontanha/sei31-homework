@@ -897,3 +897,157 @@ Processing by MountainsController#show as HTML
 Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
 
 
+Started DELETE "/mountains/7" for ::1 at 2019-04-16 17:13:23 +1000
+Processing by MountainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uPz/cQIeBzXKbVCLwqNeJtc8Ebu3mgTsPzrHwHn0Qco0rIjwsV6Y0iPJ7ArkoaNJPYv6+mIQpCSF7HNmSjrepA==", "id"=>"7"}
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/mountains_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/mountains_controller.rb:32
+  [1m[36mMountain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "mountains" WHERE "mountains"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/mountains_controller.rb:32
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/mountains_controller.rb:32
+Redirected to http://localhost:3000/mountains
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:13:24 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mountains/new" for ::1 at 2019-04-16 17:13:27 +1000
+Processing by MountainsController#new as HTML
+  Rendering mountains/new.html.erb within layouts/application
+  Rendered mountains/_form.html.erb (4.8ms)
+  Rendered mountains/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mountains" for ::1 at 2019-04-16 17:13:42 +1000
+Processing by MountainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HIy3MY/NfD8+cJzRFMJ3h/wh4q/Hxeu0jVh+eAuFBl/Kq8TUaNRu82T8tSQqzv2mHqYLiG+1sI3Lrp/0vmUGbQ==", "mountain"=>{"name"=>"el", "country"=>"United States", "city"=>"Yosemite National Park", "image"=>"https://n7tpw52zdt-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/El-Capitan-1.jpg"}, "commit"=>"Create Mountain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/mountains_controller.rb:16
+  [1m[36mMountain Create (0.8ms)[0m  [1m[32mINSERT INTO "mountains" ("name", "country", "city", "image") VALUES (?, ?, ?, ?)[0m  [["name", "el"], ["country", "United States"], ["city", "Yosemite National Park"], ["image", "https://n7tpw52zdt-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/El-Capitan-1.jpg"]]
+  ↳ app/controllers/mountains_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/mountains_controller.rb:16
+Redirected to http://localhost:3000/mountains/8
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/mountains/8" for ::1 at 2019-04-16 17:13:42 +1000
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/mountains_controller.rb:8
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains/8/edit" for ::1 at 2019-04-16 17:13:45 +1000
+Processing by MountainsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/mountains_controller.rb:21
+  Rendering mountains/edit.html.erb within layouts/application
+  Rendered mountains/_form.html.erb (4.3ms)
+  Rendered mountains/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 34ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/mountains/8" for ::1 at 2019-04-16 17:13:48 +1000
+Processing by MountainsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TGTtgiV8scGoQ5VR/yGGlYAJHu2gPOB6L8gpnqVaddPJMCWLxmKtFVdrsW96YZXXEDKfOsBkC2PiA2t8RxYl+A==", "mountain"=>{"name"=>"El Capitan", "country"=>"United States", "city"=>"Yosemite National Park", "image"=>"https://n7tpw52zdt-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/El-Capitan-1.jpg"}, "commit"=>"Update Mountain", "id"=>"8"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/mountains_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/mountains_controller.rb:26
+  [1m[36mMountain Update (1.0ms)[0m  [1m[33mUPDATE "mountains" SET "name" = ? WHERE "mountains"."id" = ?[0m  [["name", "El Capitan"], ["id", 8]]
+  ↳ app/controllers/mountains_controller.rb:26
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/mountains_controller.rb:26
+Redirected to http://localhost:3000/mountains/8
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/mountains/8" for ::1 at 2019-04-16 17:13:48 +1000
+Processing by MountainsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT  "mountains".* FROM "mountains" WHERE "mountains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/mountains_controller.rb:8
+  Rendering mountains/show.html.erb within layouts/application
+  Rendered mountains/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:13:50 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.4ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 17:13:51 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 17:13:51 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 17:13:52 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.3ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 17:13:52 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:13:53 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 17:13:53 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
