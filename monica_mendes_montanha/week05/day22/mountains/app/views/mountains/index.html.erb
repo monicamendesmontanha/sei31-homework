@@ -1,7 +1,7 @@
 <h1>All Mountains</h1>
 
 <% @mountains.each do |mountain| %>
-  <%= image_tag mountain.image%>
+  <%= image_tag mountain.image, :class => 'image'%>
 
   <ul>
     <li>Name: <%= link_to mountain.name, mountain_path(mountain.id) %></li>

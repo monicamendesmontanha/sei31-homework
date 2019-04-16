@@ -370,3 +370,42 @@ Processing by MountainsController#index as HTML
 Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/mountains" for ::1 at 2019-04-16 16:47:14 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mountains" for ::1 at 2019-04-16 16:47:54 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.1ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h1>All Mountains</h1>
+    2: 
+    3: <% @mountains.each do |mountain| %>
+    4:   <%= image_tag mountain.image :class => 'image'%>
+    5: 
+    6:   <ul>
+    7:     <li>Name: <%= link_to mountain.name, mountain_path(mountain.id) %></li>
+  
+app/views/mountains/index.html.erb:4:in `block in _app_views_mountains_index_html_erb__3722124015571504712_70214611046220'
+app/views/mountains/index.html.erb:3:in `_app_views_mountains_index_html_erb__3722124015571504712_70214611046220'
+Started GET "/mountains" for ::1 at 2019-04-16 16:48:08 +1000
+Processing by MountainsController#index as HTML
+  Rendering mountains/index.html.erb within layouts/application
+  [1m[36mMountain Load (0.2ms)[0m  [1m[34mSELECT "mountains".* FROM "mountains"[0m
+  ↳ app/views/mountains/index.html.erb:3
+  Rendered mountains/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
